@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all
+    @courses = School.find(params[:school_id]).courses
     render json: @courses
   end
 end

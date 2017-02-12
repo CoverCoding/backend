@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212193814) do
+ActiveRecord::Schema.define(version: 20170212214314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170212193814) do
     t.integer  "year"
     t.string   "term"
     t.string   "instructor"
+    t.integer  "school_id"
+    t.index ["school_id"], name: "index_courses_on_school_id", using: :btree
   end
 
   create_table "schools", force: :cascade do |t|

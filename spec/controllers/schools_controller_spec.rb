@@ -8,7 +8,7 @@ RSpec.describe SchoolsController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
-    it "load all the schools into @schools" do
+    it "loads all the schools into @schools" do
       school1, school2 = School.create!, School.create!
       get :index
       expect(assigns(:schools)).to match_array([school1, school2])
